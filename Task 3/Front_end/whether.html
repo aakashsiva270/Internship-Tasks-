@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Temperature Prediction App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        h3 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌤 Weather Temperature Prediction</h2>
+        <form action="/predict" method="post">
+            <input type="text" name="humidity" placeholder="Enter Humidity (%)" required>
+            <input type="text" name="wind_speed" placeholder="Enter Wind Speed (km/h)" required>
+            <input type="text" name="meanpressure" placeholder="Enter Pressure (hPa)" required>
+            <button type="submit">Predict Temperature</button>
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
